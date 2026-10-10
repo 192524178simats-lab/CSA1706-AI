@@ -1,0 +1,18 @@
+START
+
+1. Set jug capacities to 5L and 3L.
+2. Set initial state to (0, 0).
+3. Insert initial state into the queue.
+4. WHILE queue is not empty:
+      a. Remove a state from the queue.
+      b. If either jug contains 4L:
+             Display the steps.
+             STOP.
+      c. Generate new states by:
+             i. Filling a jug.
+            ii. Emptying a jug.
+           iii. Pouring water between jugs.
+      d. Add unvisited states to the queue.
+5. Display the solution.
+
+END
