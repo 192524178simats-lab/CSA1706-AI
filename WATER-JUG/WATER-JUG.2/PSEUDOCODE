@@ -1,0 +1,26 @@
+BEGIN
+
+1. Set jug capacities to 3, 5, 8.
+2. Set initial state to (0, 0, 8).
+3. Set goal state to (0, 4, 4).
+4. Insert initial state into QUEUE.
+5. Mark initial state as VISITED.
+
+6. WHILE QUEUE is not empty:
+      Remove a state from QUEUE.
+
+      IF state equals GOAL:
+          Print the path.
+          STOP.
+
+      FOR each pair of different jugs:
+          Pour water until the source is empty
+          or the destination is full.
+
+          IF new state is not VISITED:
+              Mark it VISITED.
+              Add it to QUEUE with its path.
+
+7. END WHILE
+
+END
