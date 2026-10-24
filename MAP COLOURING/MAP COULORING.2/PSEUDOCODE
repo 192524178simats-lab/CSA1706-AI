@@ -1,0 +1,25 @@
+BEGIN
+
+1. Create a graph of European countries.
+2. Define four available colors.
+3. FUNCTION COLOR_MAP(index):
+      IF all countries are colored:
+          RETURN TRUE
+
+      Select the next country.
+
+      FOR each available color:
+          IF no neighboring country has this color:
+              Assign the color.
+
+              IF COLOR_MAP(index + 1) is TRUE:
+                  RETURN TRUE
+
+              Remove the color.
+
+      RETURN FALSE
+
+4. Call COLOR_MAP(0).
+5. Display each country and its assigned color.
+
+END
