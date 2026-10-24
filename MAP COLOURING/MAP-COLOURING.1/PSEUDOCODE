@@ -1,0 +1,23 @@
+BEGIN
+
+1. Create a graph with nodes A to J.
+2. Define the available colors.
+3. FUNCTION COLOR(node):
+      IF all nodes are colored:
+          RETURN TRUE
+
+      FOR each color:
+          IF no adjacent node has this color:
+              Assign the color to the node.
+
+              IF COLOR(next node) is TRUE:
+                  RETURN TRUE
+
+              Remove the assigned color.
+
+      RETURN FALSE
+
+4. Call COLOR(first node).
+5. Display the color of each node.
+
+END
