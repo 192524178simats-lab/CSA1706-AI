@@ -1,0 +1,39 @@
+BEGIN
+
+FUNCTION ALPHA_BETA(node, alpha, beta, isMax)
+
+    IF node is a terminal node
+        RETURN its value
+
+    IF isMax is TRUE
+        best = -infinity
+
+        FOR each child of node
+            value = ALPHA_BETA(child, alpha, beta, FALSE)
+            best = MAX(best, value)
+            alpha = MAX(alpha, best)
+
+            IF alpha >= beta
+                BREAK
+
+        RETURN best
+
+    ELSE
+        best = +infinity
+
+        FOR each child of node
+            value = ALPHA_BETA(child, alpha, beta, TRUE)
+            best = MIN(best, value)
+            beta = MIN(beta, best)
+
+            IF alpha >= beta
+                BREAK
+
+        RETURN best
+
+END FUNCTION
+
+result = ALPHA_BETA(root, -infinity, +infinity, TRUE)
+PRINT result
+
+END
