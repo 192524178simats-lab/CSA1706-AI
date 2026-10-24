@@ -1,0 +1,32 @@
+BEGIN
+
+1. Set N = 8.
+2. Create an array to store queen positions.
+
+3. FUNCTION IS_SAFE(row, col):
+      FOR each previous row:
+          IF same column:
+              RETURN FALSE
+          IF same diagonal:
+              RETURN FALSE
+      RETURN TRUE
+
+4. FUNCTION SOLVE(row):
+      IF row = 8:
+          Display the chessboard.
+          RETURN TRUE
+
+      FOR col = 0 TO 7:
+          IF IS_SAFE(row, col):
+              Place queen at (row, col).
+
+              IF SOLVE(row + 1):
+                  RETURN TRUE
+
+              Remove queen (backtrack).
+
+      RETURN FALSE
+
+5. Call SOLVE(0).
+
+END
