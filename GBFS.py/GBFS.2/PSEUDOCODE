@@ -1,0 +1,21 @@
+BEGIN
+
+1. Define the graph with edge costs.
+2. Define the heuristic value h(n) for each node.
+3. Initialize the priority queue with the start node P.
+4. Set the cost of P to 0.
+5. WHILE the priority queue is not empty:
+      a. Remove the node with the lowest f(n).
+      b. If the node is S:
+             Reconstruct and display the path.
+             STOP.
+      c. For each neighbor of the current node:
+             Calculate the new path cost g(n).
+             Calculate f(n) = g(n) + h(n).
+             If the new path is cheaper:
+                  Update its cost and parent.
+                  Add it to the priority queue.
+6. If the goal is not reached:
+      Display "Path not found".
+
+END
