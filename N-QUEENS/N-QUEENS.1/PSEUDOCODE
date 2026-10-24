@@ -1,0 +1,26 @@
+BEGIN
+
+1. Create a 4 × 4 chessboard.
+2. Place queens row by row.
+
+3. FUNCTION SOLVE(row):
+      IF row = 4:
+          Print the chessboard.
+          RETURN TRUE
+
+      FOR col = 0 TO 3:
+          IF position (row, col) is safe:
+              Place a queen at (row, col).
+
+              IF SOLVE(row + 1) is TRUE:
+                  RETURN TRUE
+
+              Remove the queen (backtrack).
+
+      RETURN FALSE
+
+4. Call SOLVE(0).
+
+5. If no solution exists, print "No solution".
+
+END
