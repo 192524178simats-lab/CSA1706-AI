@@ -1,0 +1,57 @@
+
+import heapq
+
+graph = {
+    'A': ['D', 'C', 'B'],
+    'B': ['A', 'E'],
+    'C': ['A', 'F', 'E'],
+    'D': ['A', 'F'],
+    'E': ['B', 'C', 'H'],
+    'F': ['D', 'C', 'G'],
+    'H': ['E', 'G'],
+    'G': ['F', 'H']
+}
+
+h = {
+    'A': 40, 'B': 32, 'C': 25, 'D': 35,
+    'E': 19, 'F': 17, 'H': 10, 'G': 0
+}
+
+def gbfs(start, goal):
+    pq = [(h[start], start)]
+    parent = {start: None}
+    visited = []
+    
+    while pq:
+        _, node = heapq.heappop(pq)
+
+        if node in visited:
+            continue
+
+        visited.append(node)
+
+        if node == goal:
+            break
+
+        for neighbor in graph[node]:
+            if neighbor not in parent:
+                parent[neighbor] = node
+                heapq.heappush(pq, (h[neighbor], neighbor))
+
+    path = []
+    node = goal
+
+    if node not in visited:
+        print("Goal not found")
+        return
+
+    while node is not None:
+        path.append(node)
+        node = parent[node]
+
+    path.reverse()
+
+    print("Visited nodes:", " -> ".join(visited))
+    print("Goal path:", " -> ".join(path))
+
+gbfs('A', 'G')
