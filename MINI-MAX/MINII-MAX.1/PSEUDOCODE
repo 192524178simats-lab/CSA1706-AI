@@ -1,0 +1,28 @@
+BEGIN
+
+1. Create the game tree with terminal values.
+
+2. Define MINIMAX(node, isMax):
+
+   a. If node is a terminal node:
+         Return its value.
+
+   b. If isMax is TRUE:
+         Set best = -infinity.
+         For each child:
+             Find MINIMAX(child, FALSE).
+             Select the maximum value.
+         Return best.
+
+   c. Otherwise:
+         Set best = +infinity.
+         For each child:
+             Find MINIMAX(child, TRUE).
+             Select the minimum value.
+         Return best.
+
+3. Call MINIMAX(A, TRUE).
+
+4. Display the final value.
+
+END
